@@ -108,6 +108,10 @@ button{
     border: solid 3px #000000;
     border-radius: 20px;
 }
+.read > p{
+    display: inline;
+    margin-right: 15px;
+}
 .status{
     color: green;
     cursor: pointer;

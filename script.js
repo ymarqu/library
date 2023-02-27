@@ -17,7 +17,7 @@ function Book(title, author, pages, read){
 
 function addBookToLibrary(newBook){
     myLibrary.push(newBook);
-    display.innerHTML = updateDisplay();
+    updateDisplay();
 
 }
 
@@ -36,38 +36,39 @@ let books = myLibrary.map(b => {
     <h4>${b.title}</h4>
     <p>${b.author}</p>
     <p>Page count: ${b.pages}</p>
-    <div class="read">`
+    <div class="read" <p>read:</p>`
     lib += b.read ? `<i class="fa-solid fa-check status check"></i> </div></div>` : `<i class="fa-solid fa-x status ex"></i></div></div>`
     return lib;
 })
-return books.join("");
+display.innerHTML = books.join("");
 }
 
-// document.querySelectorAll(".trash").forEach(t => {
-//     t.addEventListener('click', () => {
-//     console.log('click');
-//     let deleteBook = t.parentNode;
-//     console.log(deleteBook.dataset.id)
-// })})
-
-// document.querySelectorAll(".status").forEach(stat => {
-//     stat.addEventListener('click', () =>{
-//         console.log(click);
-//         console.log(stat.innerHTML)
-//     })
-// })
-display.addEventListener('click', (e) => {
-    console.log(e.target)
-    console.log('click')
-})
 
 document.addEventListener("click", (e) =>{
-    // const target = e.target.closest("h4"); // Or any other selector.
-    // console.log(target);
-    console.log(e.target)
-    console.log(e)
 
-    // if(target){
-    //   // Do something with `target`.
-    // }
+    if(e.target.classList.contains('trash')){
+        deleteBook(e.target);
+    }
+    if(e.target.classList.contains('status')){
+        updateStatus(e.target);
+    }
   });
+
+
+function deleteBook(elem){
+    console.log(elem)
+    let index = parseInt(elem.parentNode.dataset.id);
+    myLibrary.splice(index, 1);
+    console.log(myLibrary);
+    updateDisplay();
+
+}
+
+function updateStatus(elem){
+    console.log(elem);
+        elem.classList.toggle('fa-x');
+        elem.classList.toggle('fa-check');
+        elem.classList.toggle('ex');
+        elem.classList.toggle('check');
+
+    }
