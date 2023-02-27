@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/bfe906e9c2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main>
+    <!-- Add Book Section Start-->
+    <section class="add-container left">
+        <p class="add-header">Add a Book!</p>
+        <form action="">
+            <input type="text" name="title" id="title" required placeholder="Title">
+            <input type="text" name="author" id="author" required placeholder="Author">
+            <input type="number" name="pages" id="pages" required min="0" placeholder="Number of Pages">
+            <div class="check-box">
+            <input type="checkbox" name="read" id="read">
+            <label for="read">I have read this book.</label><br>
+            </div>
+            <button type="submit">Add</button>
+        </form>
+    </section>
+    <!-- Add Book Section End  -->
+    <!-- Book Display Start -->
+    <section class="display-container right">
+        <h1 class="header">My Book List</h1>
+        <!-- stats container start -->
+        <div class="stats-container">
+          <div>
+            <p>Books Read: <span class="books-read">0</span> </p>
+          </div>
+          <div>
+            <p >Pages Read: <span class="pages-read">0</span></p>
+          </div>
+          <div>
+            <p>Pages Left: <span class="pages-left">0</span></p>
+          </div>
+           <div>
+            <p>Goal: <span class="goal">1000</span></p>
+           </div>
+        </div>
+        <!-- stats container end -->
+        <article class="display">
+            <div class="book">
+                <i class="fa-solid fa-trash trash"></i>
+                <h4>Book Title</h4>
+                <p>Author Name</p>
+                <p>Page count:</p>
+                <div class="read">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="ex">
+                    <i class="fa-solid fa-x"></i>
+                </div>
+            </div>
+        </article>
+    </section>
+    <!-- Book Display End -->
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
