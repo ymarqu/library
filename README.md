@@ -1,5 +1,5 @@
 # Book Tracker App
-A book collection manager where you can add and remove remove books. This app uses *Local Storage*
+A book collection manager where you can add and remove remove books. This app uses **Local Storage**.
 
 ## Directions 
 
@@ -16,5 +16,6 @@ Live website can be found [here](https://brilliant-capybara-2a3d75.netlify.app/)
 * You can change book status after addition
 * You can delete a particular book
 * You can delete all books at once
+* Tracking of books and pages read so far.
 * There is a modal to confirm or cancel complete books removal
 
