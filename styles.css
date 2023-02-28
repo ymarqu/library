@@ -1,31 +1,22 @@
+/* ######### GENERAL STYLES ####### */
 body{
-    height: 100vh;
+    min-height: 100vh;
+    /* height: 100vh; */
     width: 100vw;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #fEFEFE;
-}
-main{
-    display: flex;
-    height: 100%;
-    margin-bottom: 100px;
-}
-.add-container{
-    height: 100%;
-    width: 25vw;
-    background-color: #B9F3E4;
-    text-align: center;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow: scroll;
 
 }
-.add-header, h1{
+section{
+    min-height: 100vh;
+}
+h1{
+    font-size: 4rem;
     padding-top: 5rem;
-    font-family: 'Fraunces', serif;
-    font-size: 2rem;
-    text-transform: uppercase;
-
+    color: #424874;
 }
 form{
     margin-top: 8rem;
@@ -33,51 +24,86 @@ form{
     flex-direction: column;
     font: inherit;
 }
+main{
+    background-color: #F4EEFF;
+    display: flex;
+    height: 100%;
+}
+/* ###### ADD CONTAINER STYLES ######## */
+.add-container{
+    min-height: 100%;
+    width: 25vw;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background-color: #424874;
+    color: #Fefefe;
+    text-align: center;
+}
+.add-header, h1{
+    padding-top: 10rem;
+    font-family: 'Fraunces', serif;
+    font-family: 'Smokum', cursive;
+    font-size: 3rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+
+}
+
 input[type=text], input[type=number], button{
-    height: 4rem;
+    height: 5rem;
     width: 90%;
     margin: auto auto;
-    margin-top: 15px;
+    margin-top: 30px;
     border-radius: 15px;
-    border: solid 3px #000000;
+    border: solid 3px #FEFEFE;
     padding: 0 20px;
     box-sizing: border-box;
     font-size: 1.2rem;
 }
-.check-box{
+.check-box, input[type=checkbox]{
     margin-top: 20px;
-    font-size: 1.2rem
+    font-size: 1.5rem;
 }
 input[type=checkbox], label{
     display: inline-block;
 }
+
+.add-btn{
+    background-color: #F4EEFF;
+    border-color: #F4EEFF;
+    font-family: 'Fraunces', serif;
+    cursor: pointer;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+.add-btn:hover{
+    background-color: #A6B1E1;
+    border-color: #A6B1E1;
+    color: #F4EEFF;
+}
+
+/* ######## DISPLAY CONTAINER ######### */
 .display-container{
     text-align: center;
+    width: 100%;
 
+}
+.display{
+    width: 80%;
+    margin: auto auto;
+    border-radius: 20px;
+    margin-top: 30px;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 20px;
+    margin-bottom: 100px;
 }
 .trash{
     position: absolute;
     right: 15px;
     cursor: pointer;
-
-}
-
-.add-btn{
-    background-color: #FFAACF;
-    font-family: 'Fraunces', serif;
-    cursor: pointer;
-}
-.delete-btn{
-    width: 300px;
-    float: right;
-    margin-right: 5%;
-    cursor: pointer;
-}
-/* DISPLAY */
-
-.display-container{
-    width: 100%;
-    /* height: 100%; */
 
 }
 .stats-container{
@@ -86,36 +112,39 @@ input[type=checkbox], label{
     align-items: center;
     width: 80%;
     height: 6rem;
-    background-color: #D9ACF5;
+    font-size: 1.4rem;
+    background-color: #A6B1E1;
+    text-transform: uppercase;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    /* border: solid 3px #000000; */
     margin: auto auto;
     border-radius: 20px;
-
 }
-.display{
-    width: 80%;
-    /* height: 70vh; */
-    margin: auto auto;
-    border-radius: 20px;
-    margin-top: 30px;
-    /* background-color: #FFAACF; */
-    /* border: solid 3px #000000; */
-    padding: 50px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 20px;
-    margin-bottom: 100px;
-}
-.book{
+ /* ####### BOOK STYLES #######  */
+ .book{
     position: relative;
     background-color: #ffff;
     max-width: 20rem;
     height: 300px;
     padding: 15px;
-    /* border: solid 3px #000000; */
+    text-align: center;
     border-radius: 20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.delete-btn{
+    width: 300px;
+    float: right;
+    margin-right: 5%;
+    cursor: pointer;
+    background-color: #A6B1E1;
+    border: #A6B1E1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+}
+.delete-btn:hover{
+    background-color: #424874;
+    border: #424874;
+    color: #F4EEFF;
 }
 .read > p{
     display: inline;
@@ -123,26 +152,43 @@ input[type=checkbox], label{
 }
 
 .fa-check{
-    color: green;
+    color: #53BF9D;
     cursor: pointer;
 }
 
 .fa-x{
-    color: red;
+    color: #F94C66;
     cursor: pointer;
 }
-.hidden{
-    display: none;
+.pages-left{
+    color: #F94C66;
+}
+h4{
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    margin-top: 50px;
+}
+.author{
+    font-size: 0.8rem;
+    color: gray
+}
+.page, .read{
+    font-size: 1.2rem;
+}
+.bottom{
+    margin-top: 80px;
+    text-align: justify ;
 }
 
-/* ****MODAL**** */
+
+/* ######## MODAL STYLES ######### */
 .modal-overlay{
     position: fixed;
     top:0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 212, 178, 0.5) ;
+    background-color: rgba(134, 93, 255, 0.5) ;
     display: grid;
     place-items: center;
     transition: all 0.2s ease;

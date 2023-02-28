@@ -1,4 +1,3 @@
-// let btn = document.querySelector(".add-btn");
 let form = document.querySelector("form");
 let display = document.querySelector(".display");
 let booksRead = document.querySelector(".books-read");
@@ -45,10 +44,11 @@ let books = myLibrary.map(b => {
     lib = `<div class="book" data-id=${index}>
     <i class="fa-solid fa-trash trash"></i>
     <h4>${b.title}</h4>
-    <p>${b.author}</p>
-    <p>Page count: ${b.pages}</p>
-    <div class="read" <p>read:</p>`
-    lib += b.read ? `<i class="fa-solid fa-check status check" data-pages=${b.pages}></i> </div></div>` : `<i class="fa-solid fa-x status ex " data-pages=${b.pages}></i></div></div>`
+    <p class="author">${b.author}</p>
+    <div class="bottom">
+    <p class="page">Page count: ${b.pages}</p>
+    <div class="read" <p>Read:</p>`
+    lib += b.read ? `<i class="fa-solid fa-check status check" data-pages=${b.pages}></i> </div></div></div>` : `<i class="fa-solid fa-x status ex " data-pages=${b.pages}></i></div></div></div>`
     index++;
     return lib;
 })
@@ -92,7 +92,7 @@ function deleteBook(elem){
 }
 
 function updateRead(elem){
-    let idx = parseInt(elem.parentNode.parentNode.dataset.id);
+    let idx = parseInt(elem.parentNode.parentNode.parentNode.dataset.id);
     myLibrary[idx].read = !myLibrary[idx].read;
     let bookPages = parseInt(elem.dataset.pages);
     if(!elem.classList.contains('fa-x')){
@@ -105,13 +105,17 @@ function updateRead(elem){
         elem.classList.toggle('fa-x');
         elem.classList.toggle('fa-check');
         updateDisplay();
-        // updateStatus();
     }
 
 function updateStatus(){
  booksRead.innerHTML = bookCount;
  pagesRead.innerHTML = pageCount;
  let leftOver = 1000 - pageCount;
- pagesLeft.innerHTML = leftOver < 0 ? 0 : leftOver;
-
+ if(leftOver <= 0){
+    pagesLeft.innerHTML = 0;
+    pagesLeft.style.color = "#40513B";
+ }else{
+ pagesLeft.innerHTML =leftOver;
+ pagesLeft.style.color = "#FF0303";
+ }
 }
