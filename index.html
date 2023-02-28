@@ -24,13 +24,16 @@
             <input type="checkbox" name="read" id="read">
             <label for="read">I have read this book.</label><br>
             </div>
-            <button type="submit">Add</button>
+            <button class='add-btn'type="submit">Add</button>
         </form>
     </section>
     <!-- Add Book Section End  -->
     <!-- Book Display Start -->
     <section class="display-container right">
+      <div>
+      <button class="delete-btn"> Delete All</button>
         <h1 class="header">My Book List</h1>
+      </div>
         <!-- stats container start -->
         <div class="stats-container">
           <div>
@@ -52,6 +55,17 @@
     </section>
     <!-- Book Display End -->
     </main>
+    <!-- modal -->
+    <div class="modal-overlay">
+      <div class="modal-container">
+        <h3>Are you sure you would like delete all?</h3>
+        <div>
+        <button class="selc-btn" data-response="yes"><i class="fa-solid fa-thumbs-up"></i>Yes</button>
+        <button class="selc-btn" data-response="no"><i class="fa-solid fa-thumbs-down "></i>No</button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
