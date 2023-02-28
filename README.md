@@ -7,7 +7,7 @@ I followed the following requirements from [this project page](https://www.theod
 
 ### Live Code 
 
-Live website can be found [here](https://brilliant-capybara-2a3d75.netlify.app/) 🌸
+Live website can be found [here](https://merry-pothos-87f26e.netlify.app/) 🌸
 
 ### Features 
 * Data is saved in localStorage
